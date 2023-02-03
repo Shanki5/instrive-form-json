@@ -43,6 +43,7 @@ const Form = () => {
                         <Button
                             variant="outlined"
                             type="submit"
+                            sx={{ maxWidth: "10rem" }}
                             onClick={methods.handleSubmit(onSubmit)}
                         >
                             Submit

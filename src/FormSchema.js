@@ -7,6 +7,8 @@ export const dynamicForm = {
         defaultValue: "",
         rules: {
             required: true,
+            maxLength: 20,
+            minLength: 3,
         },
     },
     lastName: {
@@ -17,6 +19,8 @@ export const dynamicForm = {
         defaultValue: "",
         rules: {
             required: true,
+            maxLength: 20,
+            minLength: 1,
         },
     },
     gender: {
@@ -38,7 +42,7 @@ export const dynamicForm = {
             { label: "CSE", value: 200 },
             { label: "Mechanical", value: 400 },
         ],
-        defaultValue: "Mechanical",
+        defaultValue: 400,
         rules: {
             required: true,
         },
