@@ -1,25 +1,29 @@
-import { Select, InputLabel, MenuItem } from "@mui/material";
+import { Select, InputLabel, MenuItem, TextField } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 
 export const FormDropdown = ({ name, label, rules, options, defaultValue }) => {
-    const { control } = useFormContext();
+    const { register } = useFormContext();
+    console.log(options);
+    const children = options.map(({ label, value }) => {
+        <MenuItem value={value}>{label}</MenuItem>;
+    });
+
     return (
         <Box>
-            <InputLabel>{label}</InputLabel>
-            <Controller
-                name={name}
-                control={control}
-                rules={rules}
-                render={({ field: { onChange, ...field } }) => (
-                    <Select {...field} defaultValue={defaultValue} fullWidth>
-                        {options.map((option) => {
-                            <MenuItem value={option}>{option}</MenuItem>;
-                        })}
-                    </Select>
-                )}
-            />
+            <TextField
+                select
+                label={label}
+                defaultValue=""
+                inputProps={register(name, rules)}
+            >
+                {options.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                        {option.label}
+                    </MenuItem>
+                ))}
+            </TextField>
         </Box>
     );
 };
