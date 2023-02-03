@@ -33,7 +33,7 @@ export const dynamicForm = {
             required: true,
         },
     },
-    age: {
+    department: {
         name: "department",
         label: "Department",
         type: "dropdown",
@@ -41,6 +41,20 @@ export const dynamicForm = {
             { label: "ECE", value: 100 },
             { label: "CSE", value: 200 },
             { label: "Mechanical", value: 400 },
+        ],
+        defaultValue: 400,
+        rules: {
+            required: true,
+        },
+    },
+    college: {
+        name: "college",
+        label: "College",
+        type: "dropdown",
+        options: [
+            { label: "Anna University", value: 100 },
+            { label: "Vel Tech", value: 200 },
+            { label: "Vit", value: 400 },
         ],
         defaultValue: 400,
         rules: {
