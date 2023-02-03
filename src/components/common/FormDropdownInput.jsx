@@ -15,7 +15,8 @@ export const FormDropdown = ({ name, label, rules, options, defaultValue }) => {
             <TextField
                 select
                 label={label}
-                defaultValue=""
+                sx={{ minWidth: "10rem" }}
+                defaultValue={defaultValue}
                 inputProps={register(name, rules)}
             >
                 {options.map((option) => (

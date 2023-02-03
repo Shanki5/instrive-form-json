@@ -30,14 +30,15 @@ export const dynamicForm = {
         },
     },
     age: {
-        name: "age",
-        label: "Age",
+        name: "department",
+        label: "Department",
         type: "dropdown",
         options: [
-            { label: "Ads", value: 0 },
-            { label: "asdf", value: 1 },
+            { label: "ECE", value: 100 },
+            { label: "CSE", value: 200 },
+            { label: "Mechanical", value: 400 },
         ],
-        defaultValue: "Ads",
+        defaultValue: "Mechanical",
         rules: {
             required: true,
         },
