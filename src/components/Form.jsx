@@ -2,7 +2,7 @@ import React from "react";
 import FormTextInput from "./common/FormTextInput";
 import { Box, Stack } from "@mui/system";
 import { FormProvider, useForm } from "react-hook-form";
-import { dynamicForm } from "../FormSchema";
+import data from "../FormSchema.json";
 import { Button, Typography } from "@mui/material";
 import FormRadio from "./common/FormRadioInput";
 import FormDropdown from "./common/FormDropdownInput";
@@ -18,10 +18,10 @@ const Input = ({ type, ...rest }) => {
     }
 };
 
-const formInputs = Object.keys(dynamicForm).map((e) => {
+const formInputs = Object.keys(data).map((e) => {
     return (
         <Box key={e}>
-            <Input {...dynamicForm[e]} />
+            <Input {...data[e]} />
         </Box>
     );
 });

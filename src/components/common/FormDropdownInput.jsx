@@ -5,7 +5,6 @@ import { Controller, useFormContext } from "react-hook-form";
 
 export const FormDropdown = ({ name, label, rules, options, defaultValue }) => {
     const { register } = useFormContext();
-    console.log(options);
     const children = options.map(({ label, value }) => {
         <MenuItem value={value}>{label}</MenuItem>;
     });
