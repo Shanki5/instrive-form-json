@@ -3,7 +3,7 @@ import FormTextInput from "./common/FormTextInput";
 import { Box, Stack } from "@mui/system";
 import { FormProvider, useForm } from "react-hook-form";
 import { dynamicForm } from "../FormSchema";
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 
 const Input = ({ type, ...rest }) => {
     switch (type) {
@@ -22,6 +22,9 @@ const formInputs = Object.keys(dynamicForm).map((e) => {
 
 const Form = () => {
     const methods = useForm();
+    const onSubmit = (formData) => {
+        console.log(formData);
+    };
     return (
         <Stack spacing={5} p="2rem 0 0">
             <Typography variant="h3" color="initial">
@@ -31,6 +34,13 @@ const Form = () => {
                 <FormProvider {...methods}>
                     <Stack direction="column" spacing={2}>
                         {formInputs}
+                        <Button
+                            variant="outlined"
+                            type="submit"
+                            onClick={methods.handleSubmit(onSubmit)}
+                        >
+                            Submit
+                        </Button>
                     </Stack>
                 </FormProvider>
             </form>
