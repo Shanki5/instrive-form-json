@@ -1,4 +1,5 @@
-import { TextField } from "@mui/material";
+import { InputLabel, TextField } from "@mui/material";
+import { Box } from "@mui/system";
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 
@@ -11,22 +12,27 @@ export const FormTextInput = ({
 }) => {
     const { control } = useFormContext();
     return (
-        <Controller
-            name={name}
-            control={control}
-            rules={rules}
-            render={({ field: { onChange, value }, fieldState: { error } }) => (
-                <TextField
-                    helperText={error ? error.message : null}
-                    error={!!error}
-                    onChange={onChange}
-                    value={value}
-                    label={label}
-                    defaultValue={defaultValue}
-                    placeholder={placeHolder}
-                />
-            )}
-        />
+        <Box>
+            <Controller
+                name={name}
+                control={control}
+                rules={rules}
+                render={({
+                    field: { onChange, value },
+                    fieldState: { error },
+                }) => (
+                    <TextField
+                        helperText={error ? error.message : null}
+                        error={!!error}
+                        onChange={onChange}
+                        value={value}
+                        label={label}
+                        defaultValue={defaultValue}
+                        placeholder={placeHolder}
+                    />
+                )}
+            />
+        </Box>
     );
 };
 

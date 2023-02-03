@@ -19,4 +19,24 @@ export const dynamicForm = {
             required: true,
         },
     },
+    gender: {
+        name: "gender",
+        label: "Gender",
+        type: "radio",
+        options: ["male", "female"],
+        defaultValue: "",
+        rules: {
+            required: true,
+        },
+    },
+    age: {
+        name: "age",
+        label: "Age",
+        type: "dropdown",
+        options: ["10", "20", "30", "40"],
+        defaultValue: "10",
+        rules: {
+            required: true,
+        },
+    },
 };

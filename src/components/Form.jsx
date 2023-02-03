@@ -4,11 +4,17 @@ import { Box, Stack } from "@mui/system";
 import { FormProvider, useForm } from "react-hook-form";
 import { dynamicForm } from "../FormSchema";
 import { Button, Typography } from "@mui/material";
+import FormRadio from "./common/FormRadioInput";
+import FormDropdown from "./common/FormDropdownInput";
 
 const Input = ({ type, ...rest }) => {
     switch (type) {
         case "text":
             return <FormTextInput {...rest} />;
+        case "radio":
+            return <FormRadio {...rest} />;
+        case "dropdown":
+            return <FormDropdown {...rest} />;
     }
 };
 
