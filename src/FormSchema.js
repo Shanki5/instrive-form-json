@@ -33,8 +33,8 @@ export const dynamicForm = {
         name: "age",
         label: "Age",
         type: "dropdown",
-        options: ["10", "20", "30", "40"],
-        defaultValue: "10",
+        options: ["Ads", "asdf"],
+        defaultValue: "Ads",
         rules: {
             required: true,
         },

@@ -17,6 +17,7 @@ export const FormTextInput = ({
                 name={name}
                 control={control}
                 rules={rules}
+                defaultValue={defaultValue}
                 render={({
                     field: { onChange, value },
                     fieldState: { error },
@@ -27,7 +28,6 @@ export const FormTextInput = ({
                         onChange={onChange}
                         value={value}
                         label={label}
-                        defaultValue={defaultValue}
                         placeholder={placeHolder}
                     />
                 )}

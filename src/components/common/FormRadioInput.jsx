@@ -10,14 +10,11 @@ export const FormRadio = ({ name, label, rules, defaultValue, options }) => {
             name={name}
             control={control}
             rules={rules}
+            defaultValue={defaultValue}
             render={({ field: { onChange } }) => (
                 <Box>
                     <FormLabel>{label}</FormLabel>
-                    <RadioGroup
-                        onChange={onChange}
-                        label={label}
-                        defaultValue={defaultValue}
-                    >
+                    <RadioGroup onChange={onChange} label={label}>
                         {options.map((option) => {
                             return (
                                 <FormControlLabel
